@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const mongoUrl = require("mongoUrl");
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-devesh:devesh_12359@cluster0.xu7aa.mongodb.net/todolistDB", {useNewUrlParser: true});
+mongoose.connect("mongoUrl", {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
